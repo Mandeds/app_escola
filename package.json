@@ -2,7 +2,10 @@
   "type": "module",
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "init": "^0.1.2"
+    "express-session": "^1.19.0",
+    "init": "^0.1.2",
+    "mysql2": "^3.23.2"
   }
 }

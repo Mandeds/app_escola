@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login · App Escola</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/pages/login/style.css">
+</head>
+<body>
+    <main class="login-card">
+        <div class="login-card__spine" aria-hidden="true"></div>
+        <div class="login-card__content">
+            <span class="eyebrow">App Escola</span>
+            <h1>Bem-vindo(a) de volta</h1>
+            <p class="subtitle">Entre com suas credenciais para acessar o painel.</p>
+
+            <form class="login-form" id="loginForm">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu.nome@escola.com" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        const form = document.getElementById("loginForm");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+
+            try {
+                const response = await fetch("/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, senha })
+                });
+
+                if (response.ok) {
+                    window.location.href = "/painel";
+                } else {
+                    alert("Não foi possível entrar. Confira seus dados.");
+                }
+            } catch (erro) {
+                console.error(erro);
+                alert("Erro ao conectar com o servidor.");
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
