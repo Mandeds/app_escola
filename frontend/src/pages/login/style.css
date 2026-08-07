@@ -1,11 +1,13 @@
 :root {
-  --bg: #101B2D;
-  --paper: #FAF7F0;
-  --ink: #16202E;
-  --muted: #6B7280;
-  --accent: #F4B942;
-  --accent-soft: #FDE9BD;
-  --line: #E5E0D4;
+  --bg: #0E1C36;
+  --paper: #D9E8E6;
+  --ink: #0E1C36;
+  --muted: #4D74A8;
+  --accent: #2A6543;
+  --accent-soft: rgba(42, 101, 67, 0.15);
+  --line: rgba(14, 28, 54, 0.15);
+  --danger: #D52044;
+  --secondary: #4D74A8;
 }
 
 * {
@@ -18,10 +20,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: var(--bg);
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(244, 185, 66, 0.06), transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(244, 185, 66, 0.05), transparent 40%);
+    radial-gradient(circle at 15% 20%, rgba(42, 101, 67, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(77, 116, 168, 0.12), transparent 40%);
+
   font-family: 'Inter', sans-serif;
   padding: 24px;
 }
@@ -30,21 +34,33 @@ body {
   display: flex;
   width: 100%;
   max-width: 420px;
+
   background: var(--paper);
   border-radius: 14px;
+
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+
   overflow: hidden;
 }
 
 /* assinatura visual: "espiral de caderno" */
 .login-card__spine {
   flex-shrink: 0;
+
   width: 28px;
+
   background: var(--accent-soft);
-  background-image: radial-gradient(circle, var(--paper) 3px, transparent 3.5px);
+
+  background-image: radial-gradient(
+    circle,
+    var(--paper) 3px,
+    transparent 3.5px
+  );
+
   background-size: 100% 28px;
   background-position: center;
-  border-right: 1px dashed var(--line);
+
+  border-right: 1px dashed rgba(14, 28, 54, 0.2);
 }
 
 .login-card__content {
@@ -54,29 +70,42 @@ body {
 
 .eyebrow {
   display: inline-block;
+
   font-size: 12px;
   font-weight: 600;
+
   letter-spacing: 0.08em;
   text-transform: uppercase;
+
   color: var(--accent);
-  background: rgba(244, 185, 66, 0.12);
+
+  background: rgba(42, 101, 67, 0.12);
+
   padding: 4px 10px;
+
   border-radius: 999px;
+
   margin-bottom: 16px;
 }
 
 h1 {
   font-family: 'Fraunces', serif;
+
   font-weight: 600;
   font-size: 28px;
+
   color: var(--ink);
+
   margin: 0 0 8px;
 }
 
 .subtitle {
   color: var(--muted);
+
   font-size: 14px;
+
   margin: 0 0 28px;
+
   line-height: 1.5;
 }
 
@@ -87,65 +116,106 @@ h1 {
 
 label {
   font-size: 13px;
+
   font-weight: 500;
+
   color: var(--ink);
+
   margin-bottom: 6px;
 }
 
 input {
   font-family: 'Inter', sans-serif;
+
   font-size: 14px;
+
   padding: 12px 14px;
-  border: 1.5px solid var(--line);
+
+  border: 1.5px solid rgba(77, 116, 168, 0.35);
+
   border-radius: 8px;
-  background: #fff;
+
+  background: #FFFFFF;
+
   color: var(--ink);
+
   margin-bottom: 18px;
+
   outline: none;
+
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 input::placeholder {
-  color: #B0AFA6;
+  color: #6B7280;
 }
 
 input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(244, 185, 66, 0.25);
+
+  border-color: var(--secondary);
+
+  box-shadow: 0 0 0 3px rgba(77, 116, 168, 0.25);
 }
 
+
 button {
+
   font-family: 'Inter', sans-serif;
+
   font-size: 14px;
+
   font-weight: 600;
-  color: var(--ink);
+
+  color: #FFFFFF;
+
   background: var(--accent);
+
   border: none;
+
   border-radius: 8px;
+
   padding: 13px;
+
   cursor: pointer;
+
   margin-top: 6px;
+
   transition: filter 0.15s ease, transform 0.1s ease;
 }
 
 button:hover {
-  filter: brightness(1.05);
+
+  filter: brightness(1.1);
+
 }
 
 button:active {
+
   transform: translateY(1px);
+
 }
 
 button:focus-visible {
-  outline: 2px solid var(--ink);
+
+  outline: 2px solid var(--secondary);
+
   outline-offset: 2px;
+
 }
 
+
 @media (max-width: 480px) {
+
   .login-card__spine {
+
     display: none;
+
   }
+
   .login-card__content {
+
     padding: 32px 24px;
+
   }
+
 }
