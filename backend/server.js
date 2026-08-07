@@ -14,7 +14,7 @@ const port = 3001;
 app.use(express.json());
 
 app.use(session({
-    secret: "se_tentar_hackear_aqui_vai_ter_1000anos_de_azar!!",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 1000 * 60 * 60 } 
