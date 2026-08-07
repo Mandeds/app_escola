@@ -34,12 +34,9 @@ body {
   display: flex;
   width: 100%;
   max-width: 420px;
-
   background: var(--paper);
   border-radius: 14px;
-
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
-
   overflow: hidden;
 }
 
@@ -73,39 +70,27 @@ body {
 
   font-size: 12px;
   font-weight: 600;
-
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   color: var(--accent);
-
   background: rgba(42, 101, 67, 0.12);
-
   padding: 4px 10px;
-
   border-radius: 999px;
-
   margin-bottom: 16px;
 }
 
 h1 {
   font-family: 'Fraunces', serif;
-
   font-weight: 600;
   font-size: 28px;
-
   color: var(--ink);
-
   margin: 0 0 8px;
 }
 
 .subtitle {
   color: var(--muted);
-
   font-size: 14px;
-
   margin: 0 0 28px;
-
   line-height: 1.5;
 }
 
@@ -116,33 +101,21 @@ h1 {
 
 label {
   font-size: 13px;
-
   font-weight: 500;
-
   color: var(--ink);
-
   margin-bottom: 6px;
 }
 
 input {
   font-family: 'Inter', sans-serif;
-
   font-size: 14px;
-
   padding: 12px 14px;
-
   border: 1.5px solid rgba(77, 116, 168, 0.35);
-
   border-radius: 8px;
-
   background: #FFFFFF;
-
   color: var(--ink);
-
   margin-bottom: 18px;
-
   outline: none;
-
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -153,7 +126,6 @@ input::placeholder {
 input:focus {
 
   border-color: var(--secondary);
-
   box-shadow: 0 0 0 3px rgba(77, 116, 168, 0.25);
 }
 
@@ -161,36 +133,24 @@ input:focus {
 button {
 
   font-family: 'Inter', sans-serif;
-
   font-size: 14px;
-
   font-weight: 600;
-
   color: #FFFFFF;
-
   background: var(--accent);
-
   border: none;
-
   border-radius: 8px;
-
   padding: 13px;
-
   cursor: pointer;
-
   margin-top: 6px;
-
   transition: filter 0.15s ease, transform 0.1s ease;
 }
 
 button:hover {
-
   filter: brightness(1.1);
 
 }
 
 button:active {
-
   transform: translateY(1px);
 
 }
@@ -198,7 +158,6 @@ button:active {
 button:focus-visible {
 
   outline: 2px solid var(--secondary);
-
   outline-offset: 2px;
 
 }
@@ -207,13 +166,11 @@ button:focus-visible {
 @media (max-width: 480px) {
 
   .login-card__spine {
-
     display: none;
 
   }
 
   .login-card__content {
-
     padding: 32px 24px;
 
   }
