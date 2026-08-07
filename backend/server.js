@@ -4,8 +4,9 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import session from "express-session";
-import router from "./router.js";
+import router from "./Router.js";
 import { exigirLogin } from "./authMiddleware.js";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

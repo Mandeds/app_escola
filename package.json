@@ -1,11 +1,20 @@
 {
   "type": "module",
+  "name": "app_escola",
+  "version": "1.0.0",
+  "description": "Aplicativo escola",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "init": "^0.1.2",
+    "mysql": "^2.18.1",
     "mysql2": "^3.23.2"
   }
 }
