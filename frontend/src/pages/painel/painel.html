@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel</title>
-    <link rel="stylesheet" href="/css/global.css">
+    <title>Painel · App Escola</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/pages/painel/style.css">
 </head>
 <body>
-    <h1>Painel</h1>
+    <header class="topbar">
+        <span class="eyebrow">App Escola</span>
+        <h1>Painel</h1>
+    </header>
+
+    <div class="layout">
+        <main class="calendar-card">
+            <div class="calendar-header">
+                <button id="prevMonth" aria-label="Mês anterior">&#8249;</button>
+                <h2 id="monthLabel"></h2>
+                <button id="nextMonth" aria-label="Próximo mês">&#8250;</button>
+            </div>
+
+            <div class="weekdays">
+                <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span>
+                <span>Qui</span><span>Sex</span><span>Sáb</span>
+            </div>
+
+            <div id="grid" class="grid"></div>
+
+            <div class="legend">
+                <span><i class="dot tarefa"></i> Tarefa</span>
+                <span><i class="dot prova"></i> Prova</span>
+                <span><i class="dot atividade"></i> Atividade</span>
+            </div>
+        </main>
+
+        <section class="task-overview">
+            <h2>Tarefas do mês</h2>
+            <ul id="monthTaskList" class="month-task-list"></ul>
+        </section>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+        <div class="panel">
+            <div class="panel-header">
+                <h3 id="panelDate"></h3>
+                <button id="closePanel" aria-label="Fechar">&times;</button>
+            </div>
+
+            <form id="taskForm">
+                <label for="taskTitle">O que é?</label>
+                <input type="text" id="taskTitle" placeholder="Ex: Trabalho de Matemática" required>
+
+                <label for="taskType">Tipo</label>
+                <select id="taskType">
+                    <option value="tarefa">Tarefa</option>
+                    <option value="prova">Prova</option>
+                    <option value="atividade">Atividade</option>
+                </select>
+
+                <label class="checkbox-row">
+                    <input type="checkbox" id="taskRepeat">
+                    Repetir toda semana nesse dia
+                </label>
+
+                <button type="submit" class="save-btn">Salvar</button>
+            </form>
+
+            <ul id="taskList" class="task-list"></ul>
+        </div>
+    </div>
+
+    <script src="/pages/painel/script.js"></script>
 </body>
 </html>

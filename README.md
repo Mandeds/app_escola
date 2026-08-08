@@ -6,5 +6,3 @@ npm run server.js
 # confidencialidade de dados
 
 - todos os dados são armazenados no banco de dados de forma segura.
-
-
